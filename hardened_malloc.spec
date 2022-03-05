@@ -5,7 +5,7 @@ Summary:    Hardened memory allocator from GrapheneOS
 
 Group:      System Environment/Base
 License:    MIT
-URL:        https://github.com/noatsecure/hardened_malloc
+URL:        https://github.com/HardHatOS/hardened_malloc
 Source0:    https://api.github.com/repos/GrapheneOS/hardened_malloc/tarball/11
 BuildArch:  x86_64
 BuildRequires: gcc, gcc-c++, make
