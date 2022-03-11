@@ -4,7 +4,7 @@ This repository tracks the hardened memory allocator from GrapheneOS ([link](htt
 ## Instructions
 To enable this repository, enter the following commands as the root user:
 
-1. Enable the Copr repository: `dnf copr enable hardhat/release`
+1. Enable the Copr repository: `dnf copr enable hardhatos/release`
 
 2. Update the cache: `dnf update`
 
