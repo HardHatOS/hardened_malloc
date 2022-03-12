@@ -71,7 +71,7 @@ install -D -m 0644 %{SOURCE1} -t %{buildroot}%{_mandir}/man8
 %{_lib_hardened_malloc}/libhardened_malloc.so
 %{_lib_hardened_malloc}/libhardened_malloc-light.so
 %{_sysctl_hardened_malloc_conf}
-%{_mandir}/man8/hardened_malloc.8
+%{_mandir}/man8/hardened_malloc.8.*
 
 %postun
 # Remove the /lib64/hardened_malloc directory
