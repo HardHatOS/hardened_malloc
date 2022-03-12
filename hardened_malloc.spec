@@ -7,6 +7,7 @@ Group:      System Environment/Base
 License:    MIT
 URL:        https://github.com/HardHatOS/hardened_malloc
 Source0:    https://api.github.com/repos/GrapheneOS/hardened_malloc/tarball/11
+Source1:    hardened_malloc.8
 BuildArch:  x86_64
 BuildRequires: gcc, gcc-c++, make
 
@@ -62,11 +63,15 @@ echo "%{_lib_hardened_malloc}/libhardened_malloc-light.so" >> %{buildroot}%{_ld_
 # Create a new file that increases the 'vm.max_map_count' kernel tunable
 echo 'vm.max_map_count = 1048576' > %{buildroot}%{_sysctl_hardened_malloc_conf}
 
+# Copy the man page to the section 8 man page directory
+install -D -m 0644 %{SOURCE1} -t %{buildroot}%{_mandir}/man8
+
 %files
 %{_ld_so_preload}
 %{_lib_hardened_malloc}/libhardened_malloc.so
 %{_lib_hardened_malloc}/libhardened_malloc-light.so
 %{_sysctl_hardened_malloc_conf}
+%{_mandir}/man8/hardened_malloc.8
 
 %postun
 # Remove the /lib64/hardened_malloc directory
