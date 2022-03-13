@@ -1,15 +1,14 @@
-Name:       hardened_malloc
-Version:    11
-Release:    1%{?dist}
-Summary:    Hardened memory allocator from GrapheneOS
-
-Group:      System Environment/Base
-License:    MIT
-URL:        https://github.com/HardHatOS/hardened_malloc
-Source0:    https://api.github.com/repos/GrapheneOS/hardened_malloc/tarball/11
-Source1:    hardened_malloc.8
-BuildArch:  x86_64
+BuildArch: x86_64
 BuildRequires: gcc, gcc-c++, make
+Group: System Environment/Base
+License: MIT
+Name: hardened_malloc
+Release: 1%{?dist}
+Source0: https://api.github.com/repos/GrapheneOS/hardened_malloc/tarball/11
+Source1: hardened_malloc.8
+Summary: Hardened memory allocator from GrapheneOS
+URL: https://github.com/HardHatOS/hardened_malloc
+Version: 11
 
 %description
 The hardened memory allocator from GrapheneOS; packaged for Fedora Linux
