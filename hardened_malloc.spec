@@ -1,6 +1,5 @@
 BuildArch: x86_64
 BuildRequires: gcc, gcc-c++, make
-Group: System Environment/Base
 License: MIT
 Name: hardened_malloc
 Release: 1%{?dist}
