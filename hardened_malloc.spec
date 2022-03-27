@@ -64,6 +64,10 @@ echo 'vm.max_map_count = 1048576' > %{buildroot}%{_sysctl_hardened_malloc_conf}
 # Copy the man page to the section 8 man page directory
 install -D -m 0644 %{SOURCE1} -t %{buildroot}%{_mandir}/man8
 
+%postun
+# Remove the /lib64/hardened_malloc directory
+%{__rm} -r %{_lib_hardened_malloc}
+
 %files
 %{_ld_so_preload}
 %{_lib_hardened_malloc}/libhardened_malloc.so
@@ -71,6 +75,4 @@ install -D -m 0644 %{SOURCE1} -t %{buildroot}%{_mandir}/man8
 %{_sysctl_hardened_malloc_conf}
 %{_mandir}/man8/hardened_malloc.8.*
 
-%postun
-# Remove the /lib64/hardened_malloc directory
-%{__rm} -r %{_lib_hardened_malloc}
+
